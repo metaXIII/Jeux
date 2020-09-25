@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+          integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Game Picker</title>
+</head>
+<body>
+    <nav th:include="include/menu::menu" class="navbar navbar-fixed-top navbar-dark bg-inverse"></nav>
+    <div class="container start pt-2">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Jeu en cours</th>
+                <th>Plateforme</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:if="${game != null}">
+                <td th:text="${game.getNom()}"></td>
+                <td th:text="${game.getSupport().getNom()}"></td>
+                <td>
+                    <a class='btn btn-primary' th:href="@{'finished-' + ${game.getId()}}">
+                        Indiquer le jeu comme étant fini
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

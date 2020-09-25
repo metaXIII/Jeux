@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+          integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Game Picker</title>
+</head>
+<body>
+    <nav th:include="include/menu::menu" class="navbar navbar-fixed-top navbar-dark bg-inverse"></nav>
+    <div class="container start pt-2">
+        <form action="/new-support" method="post">
+            <div class="form-group">
+                <label for="support">Nom de la console :</label>
+                <input type="text" class="form-control" id="support" name="support" value=""
+                       placeholder="Nom de la console">
+            </div>
+            <input type="submit" value="Envoyer" class="btn btn-success">
+        </form>
+    </div>
+</body>
+</html>
