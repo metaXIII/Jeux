@@ -21,9 +21,19 @@ public class GameController {
 
     @GetMapping("/")
     public ModelAndView index() {
-        ModelAndView   modelAndView = new ModelAndView("index");
-        Optional<Game> game         = gameService.findByProgress();
+        ModelAndView   modelAndView     = new ModelAndView("index");
+        Optional<Game> game             = gameService.findByProgress();
+        StringBuilder  stringBuilder    = new StringBuilder();
+        int            sizeGameFinished = gameService.findAllFinished().size();
+        int            allGameAvailable = gameService.findAllByAvailable().size();
+        stringBuilder.append(sizeGameFinished);
+        stringBuilder.append("/");
+        stringBuilder.append(allGameAvailable);
+        stringBuilder.append(" soit ");
+        stringBuilder.append(String.format("%.2f", (double) (sizeGameFinished * 100) / (double) allGameAvailable));
+        stringBuilder.append("% de jeux finis");
         game.ifPresent(value -> modelAndView.addObject("game", value));
+        modelAndView.addObject("statistic", stringBuilder.toString());
         return modelAndView;
     }
 

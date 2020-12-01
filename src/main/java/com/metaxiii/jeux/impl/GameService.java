@@ -69,4 +69,14 @@ public class GameService implements IGameService {
             gameRepository.save(jeux);
         });
     }
+
+    @Override
+    public List<Game> findAllFinished() {
+        return gameRepository.findAllByEndedIsTrue();
+    }
+
+    @Override
+    public List<Game> findAllByAvailable() {
+        return gameRepository.findAllByAvailableIsTrue();
+    }
 }

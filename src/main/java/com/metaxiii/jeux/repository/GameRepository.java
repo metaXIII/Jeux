@@ -13,4 +13,6 @@ public interface GameRepository extends JpaRepository<Game, Integer> {
     Optional<Game> findByProgressIsTrueAndEndedIsFalse();
 
     List<Game> findAllByProgressIsFalse();
+    List<Game> findAllByEndedIsTrue();
+    List<Game> findAllByAvailableIsTrue();
 }

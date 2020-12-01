@@ -16,4 +16,8 @@ public interface IGameService {
     void pickGame();
 
     void finished(int id);
+
+    List<Game> findAllFinished();
+
+    List<Game> findAllByAvailable();
 }
