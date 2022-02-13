@@ -8,6 +8,7 @@ class GameApplicationTests {
 
     @Test
     void contextLoads() {
+        can I stop ?
     }
 
 }
