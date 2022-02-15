@@ -10,6 +10,7 @@ class GameApplicationTests {
 
     @Test
     void contextLoads() {
+        //do nothing
     }
 
 }
