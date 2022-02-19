@@ -1,5 +1,5 @@
 {
   "extends": [
-    "config:base, :dependencyDashboardApproval"
+    "config:base, ":dependencyDashboardApproval"
   ]
 }
