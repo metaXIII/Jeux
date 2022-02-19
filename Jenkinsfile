@@ -13,7 +13,7 @@ pipeline {
                 git 'https://github.com/metaXIII/Jeux.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn clean package"
+                bat "mvn clean package"
             }
 
             post {
