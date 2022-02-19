@@ -15,7 +15,6 @@ pipeline {
                 // Run Maven on a Unix agent.
                sh "mvn clean package"
             }
-
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
