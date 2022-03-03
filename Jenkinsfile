@@ -13,9 +13,8 @@ pipeline {
                 git 'https://github.com/metaXIII/Jeux.git'
 
                 // Run Maven on a Unix agent.
-                bat "mvn clean package"
+               sh "mvn clean package"
             }
-
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
